@@ -10,7 +10,7 @@ export default {
         primary: 'rgb(var(--color-primary) / <alpha-value>)'
       },
       backgroundImage: {
-        petals: "url('./petals.gif')"
+        petals: "url('/petals.gif')"
       },
       cursor: {
         rose: 'url(rose.cur), pointer'

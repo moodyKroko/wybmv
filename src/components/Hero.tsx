@@ -1,4 +1,4 @@
-import { EnvelopeIcon, EnvelopeOpenIcon } from '@heroicons/react/24/solid'
+import { EnvelopeIcon } from '@heroicons/react/24/solid'
 import { AnimatePresence, motion } from 'framer-motion'
 import { MouseEventHandler } from 'react'
 import HeartModel from './HeartModel'

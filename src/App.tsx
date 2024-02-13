@@ -4,8 +4,6 @@
 
 import { useState } from 'react'
 import Hero from './components/Hero'
-import { motion } from 'framer-motion'
-import HeartModel from './components/HeartModel'
 // import { Suspense } from 'react'
 // import { TextureLoader } from 'three'
 

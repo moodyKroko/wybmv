@@ -21,15 +21,20 @@ function App() {
   }
 
   return (
-    <div
-      className={` box ${
-        isClicked ? 'bg-petals' : ''
-      } bg-primary w-screen h-screen `}
-    >
-      <div className="bg-center overflow-hidden flex w-screen h-screen justify-center items-center ">
-        <Hero onClickHandler={handleClick} isClicked={isClicked} />
+    <>
+      <div
+        className={` box ${
+          isClicked ? 'bg-petals' : ''
+        }  bg-gradient-to-r from-pink-600 via-pink-700 to-rose-800 w-screen h-screen `}
+      >
+        <div className="overflow-hidden flex w-screen h-screen justify-center items-center z-50">
+          <Hero
+            onClickHandler={handleClick}
+            isClicked={isClicked}
+          />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

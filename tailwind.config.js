@@ -6,9 +6,6 @@ export default {
       display: ['Great Vibes', 'cursive']
     },
     extend: {
-      backgroundColor: {
-        primary: 'rgb(var(--color-primary) / <alpha-value>)'
-      },
       backgroundImage: {
         petals: 'url(/assets/petals.gif)'
       },

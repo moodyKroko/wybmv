@@ -1,9 +1,11 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
+import modelUrl from '../assets/model/model.glb'
+
 export function Model(props) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/love_low_poly.glb')
+  const { nodes, materials } = useGLTF(modelUrl)
   return (
     <group
       ref={group}

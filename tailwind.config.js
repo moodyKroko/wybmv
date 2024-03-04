@@ -5,12 +5,18 @@ export default {
     fontFamily: {
       display: ['Great Vibes', 'cursive']
     },
+    theme: {
+      container: {
+        center: true
+      }
+    },
     extend: {
       backgroundImage: {
-        petals: 'url(/assets/petals.gif)'
+        'hero-pattern':
+          "linear-gradient(to right, rgba(236, 72, 153, 0.8), rgba(159, 18, 57, 0.8)), url('assets/petals.gif')"
       },
       cursor: {
-        rose: 'url(/assets/rose.cur), pointer'
+        rose: "url('assets/rose.cur'), pointer"
       }
     }
   },

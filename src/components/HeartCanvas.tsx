@@ -1,44 +1,33 @@
 import { Suspense } from 'react'
 
-import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
-// import { GLTFLoader } from 'three/examples/jsm/Addons.js'
+import { Canvas } from '@react-three/fiber'
 
-// function Heart() {
-//   // const glb = useLoader(GLTFLoader, '/love_low_poly.glb')
-//   const glb = useLoader(GLTFLoader, '/love_low_poly.glb')
-//   return (
-//     <>
-//       <primitive
-//         object={glb.scene}
-//         scale={1.5}
-//         position={[0, -20, 0]}
-//       />
-//     </>
-//   )
-// }
+import Model from './Model.jsx'
 
-function HeartCanvas() {
+export default function HeartCanvas() {
   return (
-    <div className="">
-      <Canvas
-        shadows
-        camera={{
-          position: [0, 0, 200], //position: [0, 0, 200],
-          fov: 60 //fov: 60
-        }}
-        style={{
-          width: '100vw',
-          height: '100vh'
-        }}
-      >
-        <ambientLight intensity={1.25} />
-        <ambientLight intensity={0.1} />
-        <directionalLight intensity={0.4} />
-        <Suspense fallback={null}></Suspense>
-        <OrbitControls reverseOrbit={true} />
-      </Canvas>
-    </div>
+    <Canvas
+      camera={{ position: [0, 60, 200], fov: 60 }}
+      style={{
+        backgroundColor: '#111a21',
+        width: '100vw',
+        height: '100vh',
+      }}
+    >
+      <ambientLight intensity={1.25} />
+      <ambientLight intensity={0.5} />
+      <directionalLight intensity={2.6} castShadow={true} />
+      <Suspense fallback={null}>
+        <Model position={[0.025, -0.9, 0]} />
+      </Suspense>
+      <OrbitControls
+        autoRotate={true}
+        autoRotateSpeed={3}
+        enableZoom={false}
+        minPolarAngle={1.3}
+        maxPolarAngle={0}
+      />
+    </Canvas>
   )
 }
-export default HeartCanvas

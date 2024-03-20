@@ -1,18 +1,25 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { MouseEventHandler } from 'react'
-import HeartModel from './HeartModel'
+import { MouseEventHandler, useState } from 'react'
 
 import Letter from '../assets/letter.png'
+import FallingPetals from './FallingPetals'
+import HeartModel from './HeartModel'
+import ValentineMessage from './Message'
 
-const Hero = (params: {
+function Hero(params: {
   onClickHandler: MouseEventHandler<HTMLImageElement>
   isClicked: boolean
-  isYesClicked: MouseEventHandler<HTMLButtonElement>
-}) => {
+}) {
+  const [showPetals, setShowPetals] = useState(false)
+  const handleButtonClick = () => {
+    setShowPetals(true)
+  }
+
   return (
     <div
       className={` sm:container sm:mx-auto md:container md:mx-auto w-screen h-screen flex justify-center items-center bg-center relative`}
     >
+      {showPetals && <FallingPetals onAnimationComplete />}
       <AnimatePresence mode="popLayout">
         {
           // if
@@ -61,9 +68,7 @@ const Hero = (params: {
               </div>
 
               <div className="pt-20">
-                <h1 className="text-center font-display text-8xl text-wrap capitalize leading-snug text-pink-800 p-8 mt-9 -z-20">
-                  will you be my valentine!!
-                </h1>
+                <ValentineMessage />
 
                 <div className="flex justify-around">
                   <motion.button
@@ -71,7 +76,7 @@ const Hero = (params: {
                     whileTap={{ scale: 0.9 }}
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-                    onClick={params.isYesClicked}
+                    onClick={handleButtonClick}
                   >
                     Yes
                   </motion.button>

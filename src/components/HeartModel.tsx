@@ -6,14 +6,13 @@ import { Canvas } from '@react-three/fiber'
 import Model from './Model.jsx'
 import Spinner from './Spinner.tsx'
 
-export default function HeartCanvas() {
+export default function HeartModel() {
   const [speed, setSpeed] = useState(100)
 
   // gradually slowdown the rotation of model after loading
-  const rotateSpeeds = [305, 505, 305, 155, 55, 5]
-  const delayTimes = [1, 2, 3, 4, 5, 6]
   useEffect(() => {
-
+    const rotateSpeeds = [305, 505, 305, 155, 55, 5]
+    const delayTimes = [1, 2, 3, 4, 5, 6]
     for (let i = rotateSpeeds.length - 1; i >= 0; i--) {
       setTimeout(() => {
         setSpeed(rotateSpeeds[i])
@@ -24,6 +23,7 @@ export default function HeartCanvas() {
   return (
     <Canvas
       camera={{ position: [0, 60, 200], fov: 60 }}
+      style={{ width: '100vw', height: '60vh' }}
     >
       <ambientLight color={0x404040} intensity={1.25} />
       <ambientLight intensity={0.5} />

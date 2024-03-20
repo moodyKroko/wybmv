@@ -1,13 +1,14 @@
 import { useGLTF } from '@react-three/drei'
 import { useRef } from 'react'
+import ModelGLB from '../assets/model.glb'
 
 export default function Model({ ...props }) {
-  const modelURL =
-    process.env.NODE_ENV === 'production'
-      ? 'https://storage.googleapis.com/heart_model_storage/model.glb'
-      : ''
+  // const modelURL =
+  //   process.env.NODE_ENV === 'production'
+  //     ? 'https://storage.googleapis.com/heart_model_storage/model.glb'
+  //     : ''
   const group = useRef()
-  const { nodes, materials } = useGLTF(modelURL)
+  const { nodes, materials } = useGLTF(ModelGLB)
 
   return (
     <group ref={group} {...props} dispose={null}>
@@ -24,4 +25,4 @@ export default function Model({ ...props }) {
   )
 }
 
-useGLTF.preload('https://storage.googleapis.com/heart_model_storage/model.glb')
+useGLTF.preload(ModelGLB)
